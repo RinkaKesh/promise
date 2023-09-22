@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>McDonald_virtual
+
+    </title>
+</head>
+<style>
+    *{
+        text-align: center;
+    
+        
+    }
+    table{margin-left: auto;
+        margin-right: auto;
+        margin-top: 50px;
+    }
+    .food{
+        width:100%;
+        height:auto;
+        display:flex;
+        justify-content: space-around;
+        margin-top: 60px;
+
+        
+    }
+    img{
+      width:70%;
+      height:190px;
+    }
+    button{
+        color:whitesmoke;
+        background-color: forestgreen;
+        border:none;
+        font-size:large;
+        font-weight: bolder;
+        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        border-radius: 5px;
+        
+    }
+    h3{
+        color: brown;
+        font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    }
+    h2{ margin-bottom: 20px;
+        margin-top: 20px;
+        color:yellow;
+        background-color: blueviolet;
+        display: inline;
+        
+
+    }
+    h4{
+        color:black;
+    }
+    #btn{
+         width:140px ;
+         height:40px;
+         background-color: coral;
+         border: none;
+    }
+    
+
+</style>
+<body>
+    <h2>Our Menu</h2>
+    <div class="food" style="color: blue; font-size:large; font-weight: bold;align-items: center;" > Breakfast 
+        <div class="foody">
+            <img src="https://s7d1.scene7.com/is/image/mcdonalds/DC_202012_0116_SpicyCrispyChicken_PotatoBun_832x472:1-4-product-tile-desktop" alt="">
+            <h4><input type="checkbox"> Sandwitch </h4>
+            <h3>Price-Rs.99 <button onclick="order()">Order Now</button></h3>
+        </div>
+        <div class="foody">
+            <img src="https://s7d1.scene7.com/is/image/mcdonalds/DC_201907_0062_SausageBiscuit_832x472:1-4-product-tile-desktop" alt="">
+            <h4><input type="checkbox"> Sausuge Biscuit </h4>
+            <h3>Price-Rs.79 <button onclick="order()">Order Now</button></h3>
+        </div>
+        <div class="foody">
+            <img src="https://s7d1.scene7.com/is/image/mcdonalds/DC_202004_0046_EggMcMuffin_832x472:1-4-product-tile-desktop" alt="">
+            <h4><input type="checkbox"> Egg McMuffin </h4>
+            <h3>Price-Rs.129 <button onclick="order()">Order Now</button></h3>
+        </div>
+        
+    </div>
+    <div class="food" style="color: orangered; font-size:large; font-weight: bold;align-items: center;">Burgers
+        <div id="foody">
+            <img src="https://s7d1.scene7.com/is/image/mcdonalds/DC_202201_4282_QuarterPounderCheeseDeluxe_Shredded_832x472:1-4-product-tile-desktop" alt="">
+            <h4><input type="checkbox"> Cheese Deluxe </h4>
+            <h3>Price-Rs.249 <button onclick="order()">Order Now</button></h3>
+        </div>
+        <div id="foody">
+            <img src="https://s7d1.scene7.com/is/image/mcdonalds/DC_201907_0005_BigMac_832x472:1-4-product-tile-desktop" alt="">
+            <h4><input type="checkbox"> Big Mac</h4>
+            <h3>Price-Rs.179 <button onclick="order()">Order Now</button></h3>
+        </div>
+        <div id="foody">
+            <img src="https://s7d1.scene7.com/is/image/mcdonalds/202002_0592_McDouble_Alt_832x472:1-4-product-tile-desktop" alt="">
+            <h4><input type="checkbox"> McDouble </h4>
+            <h3>Price-Rs.199 <button onclick="order()">Order Now</button></h3>
+
+        </div>
+    </div>
+
+    <div style="color:chocolate; font-size:large; font-weight: bold;align-items: center;" class="food">Coffees
+        <div id="foody">
+            <img src="https://s7d1.scene7.com/is/image/mcdonalds/DC_201906_2731_MediumMocha_Glass_A1_HL_832x472:1-4-product-tile-desktop" alt="">
+            <h4><input type="checkbox"> Mocha Latte</h4>
+            <h3>Price-Rs.349 <button onclick="order()">Order Now</button></h3>
+        </div>
+        <div id="foody">
+            <img src="https://s7d1.scene7.com/is/image/mcdonalds/DC_201906_2692_MediumCappuccino_Glass_A1_HL_832x472:1-4-product-tile-desktop" alt="">
+            <h4><input type="checkbox"> Cappuccino </h4>
+            <h3>Price-Rs.399 <button onclick="order()">Order Now</button></h3>
+        </div>
+        <div id="foody">
+            <img src="https://s7d1.scene7.com/is/image/mcdonalds/DC_201906_1324_MediumCaramelLatte_Glass_A1_HL_832x472:1-4-product-tile-desktop" alt="">
+            <h4><input type="checkbox"> Caramel Latte</h4>
+            <h3>Price-Rs.349 <button onclick="order()">Order Now</button></h3>
+        </div>
+    </div>
+    <table>
+        <tr>
+            <td style="color: blue;font-size:20px;font-weight: bold;">Order Checked Items</td>
+            <td><button id="btn">Place Order</button></td>
+        </tr>
+    </table>
+
+    <script>
+       let foodArr=[
+            {img:"https://s7d1.scene7.com/is/image/mcdonalds/DC_202012_0116_SpicyCrispyChicken_PotatoBun_832x472:1-4-product-tile-desktop",
+             orderID:"A123",
+            price:"INR 99",
+            name:"Sandwitch"
+        },
+        {img:"https://s7d1.scene7.com/is/image/mcdonalds/DC_201907_0062_SausageBiscuit_832x472:1-4-product-tile-desktop",
+             orderID:"B123",
+            price:"INR 79",
+            name:"Sausuge Biscuit"
+        },
+        {img:"https://s7d1.scene7.com/is/image/mcdonalds/DC_202004_0046_EggMcMuffin_832x472:1-4-product-tile-desktop",
+             orderID:"C123",
+            price:"INR 129",
+            name:"Egg McMuffin"},
+        {img:"https://s7d1.scene7.com/is/image/mcdonalds/DC_202201_4282_QuarterPounderCheeseDeluxe_Shredded_832x472:1-4-product-tile-desktop",
+             orderID:"D123",
+            price:"INR 249",
+            name:"Cheese Deluxe"},
+        {img:"https://s7d1.scene7.com/is/image/mcdonalds/DC_201907_0005_BigMac_832x472:1-4-product-tile-desktop",
+             orderID:"E123",
+            price:"INR 179",
+            name:"Big Mac"},
+        {img:"https://s7d1.scene7.com/is/image/mcdonalds/202002_0592_McDouble_Alt_832x472:1-4-product-tile-desktop",
+             orderID:"F123",
+            price:"INR 199",
+            name:"McDouble"},
+        {img:"https://s7d1.scene7.com/is/image/mcdonalds/DC_201906_2731_MediumMocha_Glass_A1_HL_832x472:1-4-product-tile-desktop",
+             orderID:"G123",
+            price:"INR 349",
+            name:"Mocha Latte"},
+        {img:"https://s7d1.scene7.com/is/image/mcdonalds/DC_201906_2692_MediumCappuccino_Glass_A1_HL_832x472:1-4-product-tile-desktop",
+             orderID:"H123",
+            price:"INR 399",
+            name:"Cappuccino"},
+        {img:"https://s7d1.scene7.com/is/image/mcdonalds/DC_201906_1324_MediumCaramelLatte_Glass_A1_HL_832x472:1-4-product-tile-desktop",
+             orderID:"I123",
+            price:"INR 349",
+            name:"Caramel Latte"}
+
+
+        ]
+        // console.log(foodArr)
+        let OrderNow=false;
+        function order() {
+           return(OrderNow=true)
+        }
+        let OrderConfirmed=new Promise(function(resolve,reject){
+            setTimeout(function(){
+                if(OrderNow==true){
+                    foodArr.map(ele)=>{return ele}    
+        resolve(foodArr[ele].name)
+                }
+        else{
+            reject({message:"Order not confirmed"})
+        }
+            },3000)
+        })
+        // console.log(OrderConfirmed);
+        OrderConfirmed
+        .then(function(res){
+            console.log(res)
+        })
+        .catch(function(err){
+            console.log(err)
+        })
+
+    </script>
+    
+</body>
+</html>
